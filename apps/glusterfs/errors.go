@@ -16,7 +16,7 @@ import (
 var (
 	ErrNoSpace          = errors.New("No space")
 	ErrFound            = errors.New("Id already exists")
-	ErrNotFound         = errors.New("Id not found")
+	ErrNotFound         = errors.New("Id not found,In error.")
 	ErrConflict         = errors.New("The target exists, contains other items, or is in use.")
 	ErrMaxBricks        = errors.New("Maximum number of bricks reached.")
 	ErrMinimumBrickSize = errors.New("Minimum brick size limit reached.  Out of space.")
