@@ -185,7 +185,7 @@ func (a *App) NodeInfo(w http.ResponseWriter, r *http.Request) {
 	err := a.db.View(func(tx *bolt.Tx) error {
 		entry, err := NewNodeEntryFromId(tx, id)
 		if err == ErrNotFound {
-			http.Error(w, "Id not found", http.StatusNotFound)
+			http.Error(w, "Id not found,node info,", http.StatusNotFound)
 			return err
 		} else if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)

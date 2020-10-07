@@ -139,7 +139,7 @@ func (a *App) PendingOperationDetails(w http.ResponseWriter, r *http.Request) {
 		return nil
 	})
 	if err == ErrNotFound {
-		http.Error(w, fmt.Sprintf("Id not found: %v", pid), http.StatusNotFound)
+		http.Error(w, fmt.Sprintf("Id not found, glusterfs : %v", pid), http.StatusNotFound)
 		return
 	} else if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)

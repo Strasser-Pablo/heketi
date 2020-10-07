@@ -195,7 +195,7 @@ func (a *App) VolumeInfo(w http.ResponseWriter, r *http.Request) {
 		entry, err := NewVolumeEntryFromId(tx, id)
 		if err == ErrNotFound || !entry.Visible() {
 			// treat an invisible entry like it doesn't exist
-			http.Error(w, "Id not found", http.StatusNotFound)
+			http.Error(w, "Id not found, invisible http case,", http.StatusNotFound)
 			return ErrNotFound
 		} else if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)

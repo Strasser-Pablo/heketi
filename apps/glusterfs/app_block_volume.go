@@ -121,7 +121,7 @@ func (a *App) BlockVolumeInfo(w http.ResponseWriter, r *http.Request) {
 	err := a.db.View(func(tx *bolt.Tx) error {
 		entry, err := NewBlockVolumeEntryFromId(tx, id)
 		if err == ErrNotFound || !entry.Visible() {
-			http.Error(w, "Id not found", http.StatusNotFound)
+			http.Error(w, "Id not found, block volume info,", http.StatusNotFound)
 			return ErrNotFound
 		} else if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
